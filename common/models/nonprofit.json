@@ -1,0 +1,71 @@
+{
+  "name": "nonprofit",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "trackChanges": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "requestedDeliverables": {
+      "type": "array"
+    },
+    "whatDoesNonprofitDo": {
+      "type": "string"
+    },
+    "websiteLink": {
+      "type": "string"
+    },
+    "stakeholderName": {
+      "type": "string"
+    },
+    "stakeholderEmail": {
+      "type": "string"
+    },
+    "endUser": {
+      "type": "string"
+    },
+    "approvedDeliverables": {
+      "type": "array"
+    },
+    "projectDescription": {
+      "type": "string"
+    },
+    "logoUrl": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "estimatedHours": {
+      "type": "number"
+    },
+    "interestedCampers": {
+      "type": []
+    },
+    "confirmedCampers": {
+      "type": []
+    },
+    "currentStatus": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": []
+}

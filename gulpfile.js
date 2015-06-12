@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     eslint = require('gulp-eslint');
 
 var paths = {
-    server: './app.js',
+    server: './server/server.js',
     serverIgnore: []
 };
 
@@ -29,7 +29,7 @@ gulp.task('serve', function(cb) {
         ignore: paths.serverIgnore,
         env: {
             'NODE_ENV': 'development',
-            'DEBUG': 'freecc:*'
+            'DEBUG': process.env.DEBUG || 'freecc:*'
         }
     })
         .on('start', function() {
